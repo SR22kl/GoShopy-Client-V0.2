@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# GoShopy-Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Prerequisite
+Must have basic knowledge of  **Node**,  **React**,  **Express**,  **MongoDB**  .  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Install Dependencies
 
-## Expanding the ESLint configuration
+[](https://github.com/SR22kl/GoShopy-Client?tab=readme-ov-file#install-dependencies)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**For Backend**  -  `npm i && npm run build`
 
-- Configure the top-level `parserOptions` property like this:
+## Env Variables
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+[](https://github.com/meabhisingh/mern-ecommerce-server-2024?tab=readme-ov-file#env-variables)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Make Sure to Create a .env file in root directory and add appropriate variables in order to use the app.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+**Essential Variables**  
+VITE_FIREBASE_KEY=  `from firebase`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+VITE_AUTH_DOMAIN= `from firebase`
+
+VITE_PROJECT_ID= `from firebase`
+
+VITE_STORAGE_BUCKET= `from firebase`
+
+VITE_MESSAGING_SENDER_ID= `from firebase`
+
+VITE_APP_ID= `from firebase`
+
+VITE_SERVER= `Your Backend Server URl`
+
+VITE_STRIPE_KEY= `Stripe Publishable Key`
+
+_fill each filed with your info respectively.
+
