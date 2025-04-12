@@ -107,6 +107,8 @@ const Customers = () => {
     rows.length > 6
   )();
 
+  console.log(Table);
+
   return (
     <div className="admin-container">
       <AdminSidebar />
