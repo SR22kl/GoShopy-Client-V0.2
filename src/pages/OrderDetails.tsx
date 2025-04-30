@@ -1,9 +1,9 @@
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { Skeleton } from "../components/Loader";
 import { useOrderDetailsQuery } from "../redux/api/orderApi";
 import { CustomError } from "../types/apiTypes";
-import toast from "react-hot-toast";
-import { Skeleton } from "../components/Loader";
-import { server } from "../redux/store";
+import { transformImage } from "../utils/features";
 
 const OrderDetails = () => {
   const { id } = useParams();
@@ -121,7 +121,7 @@ const OrderDetails = () => {
                     className="flex items-center border-b pb-4"
                   >
                     <img
-                      src={`${server}/${item.photo}`}
+                      src={transformImage(item.photo, 200)}
                       alt={item.name}
                       className="w-20 h-20 object-contain mr-4 rounded-md"
                     />

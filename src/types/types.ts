@@ -11,10 +11,27 @@ export type User = {
 export type Product = {
   _id: string;
   name: string;
-  photo: string;
+  photos: {
+    public_id: string;
+    url: string;
+  }[];
   category: string;
   price: number;
   stock: number;
+  description: string;
+  ratings: number;
+  numOfReviews: number;
+};
+export type Reviews = {
+  _id: string;
+  comment: string;
+  user: {
+    _id: string;
+    name: string;
+    photo: string;
+  };
+  product: string;
+  rating: number;
 };
 
 export type ShippingInfo = {

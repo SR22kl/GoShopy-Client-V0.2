@@ -6,6 +6,7 @@ import {
   OrderDetails,
   PieChart,
   Product,
+  Reviews,
   ShippingInfo,
   Stats,
   User,
@@ -42,6 +43,10 @@ export type UserDetailsResponse = {
 export type AllProductsResponse = {
   success: boolean;
   products: Product[];
+};
+export type AllReviewsResponse = {
+  success: boolean;
+  reviews: Reviews[];
 };
 
 export type CategoriesResponse = {
@@ -97,6 +102,18 @@ export type SeachProductsRequest = {
   search: string;
   sort: string;
   category: string;
+};
+
+export type NewReviewRequest = {
+  rating: number;
+  comment: string;
+  productId: string;
+  userId?: string;
+};
+
+export type DeleteReviewRequest = {
+  userId?: string;
+  reviewId: string;
 };
 
 export type NewProductRequest = {

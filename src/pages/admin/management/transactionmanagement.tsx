@@ -1,17 +1,16 @@
 import { FaTrash } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
-import { server } from "../../../redux/store";
-import { Order, OrderItem } from "../../../types/types";
-import { useSelector } from "react-redux";
-import { UserReducerInitialState } from "../../../types/reducerTypes";
+import { Skeleton } from "../../../components/Loader";
 import {
   useDeleteOrderMutation,
   useOrderDetailsQuery,
   useProcessOrderMutation,
 } from "../../../redux/api/orderApi";
-import { Skeleton } from "../../../components/Loader";
-import { responseToast } from "../../../utils/features";
+import { UserReducerInitialState } from "../../../types/reducerTypes";
+import { Order, OrderItem } from "../../../types/types";
+import { responseToast, transformImage } from "../../../utils/features";
 
 const TransactionManagement = () => {
   const deafaultData: Order = {
@@ -100,7 +99,7 @@ const TransactionManagement = () => {
                 <ProductCard
                   key={i._id}
                   name={i.name}
-                  photo={`${`${server}/${i.photo}`}`}
+                  photo={transformImage(i.photo, 200)}
                   productId={i.productId}
                   _id={i._id}
                   quantity={i.quantity}

@@ -1,10 +1,11 @@
 @use "./mixin" as *;
-
 @use "./dashboard";
+@use "./home.scss";
 @use "./products";
 @use "./chart";
 @use "./dashboardapp";
 @use "./mediaquery";
+@use "./product-details.scss";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -40,6 +41,13 @@
     td {
       padding: 1rem;
     }
+  }
+}
+
+button {
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
   }
 }
 
@@ -112,7 +120,7 @@ a {
     }
 
     > div {
-      margin: 2rem 1rem;
+      margin: 1rem 1rem;
       > h5 {
         @include heading(2px);
         opacity: 0.8;

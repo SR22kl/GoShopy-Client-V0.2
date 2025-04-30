@@ -1,0 +1,147 @@
+@use "./mixin" as *;
+
+.product-details {
+  padding: 4rem;
+
+  > main {
+    > section {
+      &:last-of-type {
+        article {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          margin: 2rem 0;
+          > div {
+            width: 9rem;
+            @include flex(row, space-between);
+          }
+        }
+      }
+    }
+  }
+
+  > section {
+    > article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > h2 {
+        @include heading;
+      }
+    }
+  }
+}
+
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 10px;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+// .review-dialog {
+//   width: 30rem;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   padding: 2rem;
+//   border: none;
+//   border-radius: 0.5rem;
+//   > button {
+//     position: absolute;
+//     top: 0.5rem;
+//     right: 0.5rem;
+//     background-color: rgb(29, 29, 29);
+//     color: white;
+//     border: none;
+//     cursor: pointer;
+//     border-radius: 50%;
+//     width: 2rem;
+//     height: 2rem;
+//     display: grid;
+//     place-items: center;
+//     font-size: 1.5rem;
+//   }
+//   > h2 {
+//     @include heading;
+//   }
+//   > form {
+//     margin: 1rem 0;
+//     @include flex(column);
+//     > textarea {
+//       min-height: 25vh;
+//       padding: 1rem;
+//       border: 1px solid rgb(29, 29, 29);
+//       border-radius: 5px;
+//       font-size: 1.2rem;
+//       width: 100%;
+//     }
+//     > button {
+//       width: 100%;
+//       background-color: rgb(29, 29, 29);
+//       color: white;
+//       border: none;
+//       cursor: pointer;
+//       padding: 1rem;
+//       border-radius: 5px;
+//       font-size: 1.2rem;
+//       &:hover {
+//         opacity: 0.8;
+//       }
+//     }
+//   }
+// }
+
+// .review {
+//   position: relative;
+//   width: 45rem;
+//   flex: none;
+//   background-color: rgb(244, 244, 244);
+//   padding: 2rem;
+//   border-radius: 1rem;
+//   margin: 1rem 0;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   gap: 1rem;
+//   p {
+//     font-size: 1.2rem;
+//     font-weight: 300;
+//   }
+
+//   > div {
+//     display: flex;
+//     gap: 1rem;
+//     align-items: center;
+//     img {
+//       width: 2rem;
+//       height: 2rem;
+//       border-radius: 50%;
+//     }
+//     small {
+//       color: gray;
+//     }
+//   }
+
+//   > button {
+//     position: absolute;
+//     top: -1.25rem;
+//     right: -1.25rem;
+//     width: 2.5rem;
+//     height: 2.5rem;
+//     background-color: rgb(29, 29, 29);
+//     color: white;
+//     border: none;
+//     cursor: pointer;
+//     border-radius: 50%;
+//     display: grid;
+//     place-items: center;
+//     font-size: 1.25rem;
+//   }
+// }

@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { auth } from "./firebase";
 import { getUser } from "./redux/api/userApi";
 import { userExist, userNotExist } from "./redux/reducer/userReducer";
 import { UserReducerInitialState } from "./types/reducerTypes";
-import ProtectedRoute from "./components/ProtectedRoute";
 
 const Home = lazy(() => import("./pages/Home"));
 const Cart = lazy(() => import("./pages/Cart"));
@@ -21,6 +21,7 @@ const Orders = lazy(() => import("./pages/Orders"));
 const OrderDetails = lazy(() => import("./pages/OrderDetails"));
 const Checkout = lazy(() => import("./pages/Checkout"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+import Footer from "./components/Footer";
 
 //Admin routes
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
@@ -49,6 +50,8 @@ const App = () => {
   );
 
   // console.log(user)
+
+  // return signOut(auth).then((c)=> console.log("done"))
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
@@ -130,6 +133,7 @@ const App = () => {
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      <Footer/>
 
       {/* Toaster */}
       <Toaster position="bottom-center" />

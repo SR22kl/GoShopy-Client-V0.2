@@ -1,7 +1,7 @@
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { server } from "../redux/store";
 import { CartItem } from "../types/types";
+import { transformImage } from "../utils/features";
 
 type CartItemProps = {
   cartItem: CartItem;
@@ -26,7 +26,7 @@ const CartItemCard = ({
       >
         <img
           className="w-[100px] h-[100px] object-contain duration-300 hover:scale-110 ease-in-out cursor-pointer"
-          src={`${server}/${photo}`}
+          src={transformImage(photo, 300)}
           alt={name}
         />
         <article className="flex flex-col justify-start items-center gap-[0.25rem]">
@@ -36,7 +36,9 @@ const CartItemCard = ({
           >
             <p>{name}</p>
           </Link>
-          <span className="text-[12px] md:text-[1rem] pr-2 md:pr-0 font-bold">₹{price}</span>
+          <span className="text-[12px] md:text-[1rem] pr-2 md:pr-0 font-bold">
+            ₹{price}
+          </span>
           {/* <p>Category: {category}</p>
           <p>Stock: {stock}</p>
           <p>Quantity: {quantity}</p> */}

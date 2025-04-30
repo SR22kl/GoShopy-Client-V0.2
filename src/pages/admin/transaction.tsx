@@ -111,9 +111,9 @@ const Transaction = () => {
             className="skeleton w-full h-12"
           />
         ) : (
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto ">
             <table className="w-full table-auto text-sm">
-              <thead className="bg-gray-200 sticky top-0 z-10 text-[11px] md:text-[15px]">
+              <thead className="bg-gray-200 text-[11px] md:text-[15px]">
                 <tr>
                   <th className="px-2 py-2 sm:px-4 text-left font-semibold text-gray-700 whitespace-nowrap">
                     User

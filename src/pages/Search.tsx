@@ -10,12 +10,15 @@ import { Skeleton } from "../components/Loader";
 import { CartItem } from "../types/types";
 import { addToCart } from "../redux/reducer/cartReducer";
 import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 const Search = () => {
+  const searchQuery = useSearchParams()[0];
+
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
   const [maxPrice, setMaxPrice] = useState(100000);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(searchQuery.get("category") || "");
   const [page, setPage] = useState(1);
 
   const dispatch = useDispatch();
@@ -100,6 +103,7 @@ const Search = () => {
           <div className="flex flex-col gap-[0.5rem] w-full">
             <label className="font-[400] text-sm md:text-base">Category</label>
             <select
+              value={category}
               className="p-2 md:p-[10px] border-1 border-gray-200 shadow-md rounded outline-none cursor-pointer text-sm md:text-base"
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -136,7 +140,7 @@ const Search = () => {
               />
             </div>
           ) : (
-            <div className="flex justify-start gap-2 md:gap-3 items-start flex-wrap h-[calc(100%-8rem)] overflow-y-auto">
+            <div className="flex justify-start gap-3 md:gap-4 items-start flex-wrap h-[calc(100%-8rem)] overflow-y-auto">
               {searchedData?.products.map((i) => (
                 <ProductCard
                   key={i._id}
@@ -145,7 +149,7 @@ const Search = () => {
                   category={i.category}
                   price={i.price}
                   stock={i.stock}
-                  photo={i.photo}
+                  photos={i.photos}
                   handler={addToCartHandler}
                 />
               ))}

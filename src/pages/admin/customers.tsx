@@ -123,7 +123,7 @@ const Customers = () => {
           <div className="overflow-x-auto">
             {/*horizontal scroll for the table */}
             <table className="w-full table-auto text-[12px] md:text-[15px]">
-              <thead className="bg-gray-200 sticky top-0 z-10">
+              <thead className="bg-gray-200">
                 <tr>
                   {columns.map((column) => (
                     <th

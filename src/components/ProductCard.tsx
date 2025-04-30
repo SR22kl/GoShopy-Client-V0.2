@@ -1,13 +1,16 @@
 import { FaPlus } from "react-icons/fa";
-import { server } from "../redux/store";
 import { CartItem } from "../types/types";
 import { useNavigate } from "react-router-dom";
+import { transformImage } from "../utils/features";
 
 type ProductCardProps = {
   productId: string;
   name: string;
   price: number;
-  photo: string;
+  photos: {
+    public_id: string;
+    url: string;
+  }[];
   category: string;
   stock: number;
   handler: (cartItem: CartItem) => string | undefined;
@@ -17,7 +20,7 @@ const ProductCard = ({
   productId,
   name,
   price,
-  photo,
+  photos,
   stock,
   handler,
 }: ProductCardProps) => {
@@ -30,8 +33,8 @@ const ProductCard = ({
         id="productCard"
       >
         <img
-          className="h-[cal(17.75-3rem)] object-cover m-[1rem]"
-          src={`${server}/${photo}`}
+          className="h-[15rem] object-cover m-[1rem]"
+          src={transformImage(photos?.[0]?.url, 500)}
           alt={name}
         />
         <p className="text-[16px] font-semibold">{name}</p>
@@ -48,7 +51,7 @@ const ProductCard = ({
                 productId,
                 name,
                 price,
-                photo,
+                photo: photos?.[0]?.url,
                 stock,
                 quantity: 1,
               })
