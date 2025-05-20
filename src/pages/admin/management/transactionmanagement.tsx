@@ -77,7 +77,7 @@ const TransactionManagement = () => {
   if (isError) return <Navigate to={"/404"} />;
 
   return (
-    <div className="admin-container">
+    <div className="admin-container mb-[50px]">
       <AdminSidebar />
       <main className="product-management">
         {isLoading ? (

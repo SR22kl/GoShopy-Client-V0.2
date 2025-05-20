@@ -72,7 +72,7 @@ const AllCoupons = () => {
 
   return (
     <>
-      <div className="admin-container">
+      <div className="admin-container mb-[50px]">
         <AdminSidebar />
         <main className="p-4 md:p-6">
           <h1 className="text-[18px] md:text-2xl mt-2 font-semibold mb-3 md:mb-4">

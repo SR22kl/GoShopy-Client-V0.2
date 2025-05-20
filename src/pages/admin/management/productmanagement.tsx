@@ -107,7 +107,7 @@ const Productmanagement = () => {
   }, [data]);
 
   return (
-    <div className="admin-container">
+    <div className="admin-container mb-[100px] ">
       <AdminSidebar />
 
       <main className="product-management">

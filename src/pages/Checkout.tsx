@@ -98,7 +98,7 @@ const CheckoutForm = () => {
 
   return (
     <>
-      <div className="max-w-[400px] w-full m-auto mt-[50px]">
+      <div className="max-w-[400px] mb-[100px] w-full m-auto mt-[50px]">
         <form
           className="flex flex-col justify-start, items-stretch gap-[2rem]"
           onSubmit={submitHandler}
